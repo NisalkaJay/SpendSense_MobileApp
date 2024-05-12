@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".UpdateExpenseActivity">
+
+    <TextView
+        android:id="@+id/updateExpenseHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/bungee_shade"
+        android:text="@string/edit_expenses"
+        android:textColor="@color/orange"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/updateSaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/updateExpenseHeading"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/baseline_beenhere_24" />
+
+    <EditText
+        android:id="@+id/updateAmount"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="@string/enter_the_amount"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/cuprum"
+        android:layout_below="@id/updateExpenseHeading"
+        android:background="@drawable/border"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"/>
+
+    <EditText
+    android:id="@+id/date"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_below="@id/updateExpenseHeading"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="101dp"
+    android:background="@drawable/border"
+    android:fontFamily="@font/cuprum"
+    android:hint="@string/enter_the_date"
+    android:maxLines="1"
+    android:padding="12dp"
+    android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/updateContentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/updateAmount"
+        android:background="@drawable/border"
+        android:layout_marginTop="113dp"
+        android:fontFamily="@font/cuprum"
+        android:gravity="top"
+        android:hint="@string/enter_the_description"
+        android:padding="22dp"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

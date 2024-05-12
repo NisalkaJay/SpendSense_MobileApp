@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SpendSense</string>
+    <string name="add_expenses">Add Expense</string>
+    <string name="enter_the_amount">Enter the Amount</string>
+    <string name="enter_the_description">Enter the description</string>
+    <string name="amount">Amount</string>
+    <string name="content">Content</string>
+    <string name="expenses">Expenses.</string>
+    <string name="edit_expenses">UPDATE</string>
+    <string name="date">Date</string>
+    <string name="enter_the_date">Enter the date</string>
+</resources>
