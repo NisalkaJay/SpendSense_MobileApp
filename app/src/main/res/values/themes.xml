@@ -4,7 +4,7 @@
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/orange</item>
         <item name="colorPrimaryVariant">@color/orange</item>
-        <item name="android:statusBarColor">@color/orange</item>
+        <item name="android:statusBarColor">@color/black</item>
 </style>
 
     <style name="Theme.SpendSense" parent="Base.Theme.SpendSense" />

@@ -8,16 +8,17 @@ import android.database.sqlite.SQLiteOpenHelper
 class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION,){
 
     companion object{
-        private const val DATABASE_NAME = "spendsense.db"
+        private const val DATABASE_NAME = "expense.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "allexpenses"
         private const val COLUMN_ID = "id"
         private const val COLUMN_TITLE = "amount"
         private const val COLUMN_CONTENT = "content"
+        private const val COLUMN_DATE = "date"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuery = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_TITLE INTEGER, $COLUMN_CONTENT TEXT)"
+        val createTableQuery = "CREATE TABLE $TABLE_NAME ($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_TITLE INTEGER, $COLUMN_CONTENT TEXT,$COLUMN_DATE TEXT)"
         db?.execSQL(createTableQuery)
     }
 
@@ -32,6 +33,7 @@ class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATAB
         val  values = ContentValues().apply {
             put(COLUMN_TITLE, expense.amount)
             put(COLUMN_CONTENT, expense.content)
+            put(COLUMN_DATE,expense.date)
         }
         db.insert(TABLE_NAME,null,values)
         db.close()
@@ -46,8 +48,9 @@ class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATAB
             val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
             val title = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
             val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
+            val date = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DATE))
 
-            val expense = Expense(id,title,content)
+            val expense = Expense(id,title,content,date)
             expenseList.add(expense)
         }
         cursor.close()
@@ -59,6 +62,7 @@ class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATAB
         val values = ContentValues().apply {
             put(COLUMN_TITLE,expense.amount)
             put(COLUMN_CONTENT,expense.content)
+            put(COLUMN_DATE,expense.date)
         }
         val whereClause = "$COLUMN_ID = ?"
         val whereArgs = arrayOf(expense.id.toString())
@@ -75,10 +79,12 @@ class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATAB
         val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
         val title = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_TITLE))
         val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_CONTENT))
+        val date = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_DATE))
+
 
         cursor.close()
         db.close()
-        return Expense(id,title,content)
+        return Expense(id,title,content,date)
     }
 
     fun deleteExpense(expenseId: Int){

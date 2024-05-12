@@ -17,6 +17,7 @@ class ExpenseAdapter (private var expense: List<Expense>,context: Context) : Rec
     class ExpenseViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
         val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)
         val contentTextView: TextView = itemView.findViewById(R.id.contentTextView)
+        val dateTextView: TextView = itemView.findViewById(R.id.dateTextView)
         val updateButton: ImageView = itemView.findViewById(R.id.updateButton)
         val deleteButton: ImageView = itemView.findViewById(R.id.deleteButton)
     }
@@ -40,6 +41,7 @@ class ExpenseAdapter (private var expense: List<Expense>,context: Context) : Rec
         }
 
         holder.contentTextView.text =expense.content
+        holder.dateTextView.text =expense.date
 
         holder.updateButton.setOnClickListener{
             val intent = Intent(holder.itemView.context,UpdateExpenseActivity::class.java).apply {

@@ -43,7 +43,7 @@
         android:maxLines="1"/>
 
     <EditText
-    android:id="@+id/date"
+    android:id="@+id/updateDate"
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:layout_below="@id/updateExpenseHeading"
