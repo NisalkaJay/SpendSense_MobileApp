@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    app:cardUseCompatPadding="true">
+    app:cardUseCompatPadding="true"
+    android:background="@color/white">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/amount"
-                android:textColor="@color/orange"
+                android:textColor="@color/darkblue"
                 android:fontFamily="@font/cuprum"
                 android:textSize="18sp"
                 android:textStyle="bold"/>

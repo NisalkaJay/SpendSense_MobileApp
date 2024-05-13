@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".AddExpenseActivity">
+    tools:context=".AddExpenseActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/addExpenseHeading"
@@ -16,7 +17,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/bungee_shade"
         android:text="@string/add_expenses"
-        android:textColor="@color/orange"
+        android:textColor="@color/darkblue"
         android:textSize="24sp" />
 
     <ImageView

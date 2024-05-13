@@ -9,4 +9,7 @@
     <string name="edit_expenses">UPDATE</string>
     <string name="date">Date</string>
     <string name="enter_the_date">Enter the date</string>
+    <string name="tracking_expenses_with_just_a_quick_glance_">Tracking expenses with just a quick glance</string>
+    <string name="spend_sense">Spend Sense</string>
+    <string name="created_by_nisalka">Created By Nisalka</string>
 </resources>
