@@ -36,8 +36,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="17dp"
-        android:backgroundTint="@color/darkblue"
-        app:tint="@color/white"
+        android:backgroundTint="@color/yellow"
+        app:tint="@color/darkblue"
         android:src="@drawable/baseline_add_24"
 
         />

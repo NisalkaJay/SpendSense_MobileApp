@@ -28,7 +28,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="6dp"
-        android:src="@drawable/baseline_beenhere_24" />
+        android:src="@drawable/checked__1_" />
 
     <EditText
         android:id="@+id/amount"
