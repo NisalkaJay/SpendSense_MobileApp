@@ -5,6 +5,18 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+fun formatDate(inputDate: String): String {
+    // Assuming inputDate is in DDMMYYYY format
+    if (inputDate.length == 8) {
+        val day = inputDate.substring(0, 2)
+        val month = inputDate.substring(2, 4)
+        val year = inputDate.substring(4, 8)
+        return "$day/$month/$year"
+    }
+    return inputDate // Return as is if not in expected format
+}
+
+
 class ExpenseDatabaseHelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME,null, DATABASE_VERSION,){
 
     companion object{

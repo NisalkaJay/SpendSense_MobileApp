@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.spendsense.databinding.ActivityUpdateExpenseBinding
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class UpdateExpenseActivity : AppCompatActivity() {
 
@@ -27,15 +30,16 @@ class UpdateExpenseActivity : AppCompatActivity() {
         val expense = db.getExpenseByID(expenseId)
         binding.updateAmount.setText(expense.amount.toString())
         binding.updateContentEditText.setText(expense.content)
-        binding.updateDate.setText(expense.date)
+        binding.updateDateEditText.setText(expense.date)
 
         binding.updateSaveButton.setOnClickListener{
             val newTitle = binding.updateAmount.text.toString()
             val newTitleInt = newTitle.toIntOrNull() ?: 0
             val newContent = binding.updateContentEditText.text.toString()
-            val newDate = binding.updateDate.text.toString()
 
-            val updatedExpense = Expense(expenseId,newTitleInt,newContent,newDate)
+            val date = formatDate(binding.updateDateEditText.text.toString())
+
+            val updatedExpense = Expense(expenseId,newTitleInt,newContent,date)
             db.updateExpense(updatedExpense)
             finish()
             Toast.makeText(this,"Changes Saved", Toast.LENGTH_SHORT).show()

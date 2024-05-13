@@ -44,18 +44,20 @@
         android:maxLines="1"/>
 
     <EditText
-    android:id="@+id/updateDate"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_below="@id/updateExpenseHeading"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="101dp"
-    android:background="@drawable/border"
-    android:fontFamily="@font/cuprum"
-    android:hint="@string/enter_the_date"
-    android:maxLines="1"
-    android:padding="12dp"
-    android:textSize="20sp" />
+        android:id="@+id/updateDateEditText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/updateExpenseHeading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="101dp"
+        android:background="@drawable/border"
+        android:fontFamily="@font/cuprum"
+        android:hint="DD/MM/YYYY"
+        android:inputType="number"
+        android:maxEms="10"
+        android:maxLines="1"
+        android:padding="12dp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/updateContentEditText"

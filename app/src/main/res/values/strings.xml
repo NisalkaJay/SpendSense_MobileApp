@@ -12,4 +12,5 @@
     <string name="tracking_expenses_with_just_a_quick_glance_">Tracking expenses with just a quick glance</string>
     <string name="spend_sense">Spend Sense</string>
     <string name="created_by_nisalka">Created By Nisalka</string>
+    <string name="ddmmyyyy">DDMMYYYY</string>
 </resources>

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.spendsense.databinding.ActivityAddExpenseBinding
-import com.example.spendsense.databinding.ActivityMainBinding
+import java.util.*
 
 class AddExpenseActivity : AppCompatActivity() {
 
@@ -22,12 +22,16 @@ class AddExpenseActivity : AppCompatActivity() {
             val title = binding.amount.text.toString()
             val titleAsInteger = title.toIntOrNull() ?: 0
             val  content = binding.contentEditText.text.toString()
-            val  date = binding.date.text.toString()
+
+            val date = formatDate(binding.dateEditText.text.toString())
+
             val  expense = Expense(0, titleAsInteger,content, date)
             db.insertExpense(expense)
             finish()
             Toast.makeText(this,"Expense Saved",Toast.LENGTH_SHORT).show()
         }
+
+
 
     }
 }
